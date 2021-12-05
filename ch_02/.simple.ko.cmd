@@ -1,0 +1,1 @@
+cmd_/home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.ko := ld -r -m elf_x86_64 --build-id=sha1  -T scripts/module.lds -o /home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.ko /home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.o /home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.mod.o;  true

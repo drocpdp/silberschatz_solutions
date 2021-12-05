@@ -1,0 +1,1 @@
+cmd_/home/drocpdp/Projects/silberschatz_solutions/ch_02/modules.order := {   echo /home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.ko; :; } | awk '!x[$$0]++' - > /home/drocpdp/Projects/silberschatz_solutions/ch_02/modules.order

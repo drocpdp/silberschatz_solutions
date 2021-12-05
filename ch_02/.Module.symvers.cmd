@@ -1,0 +1,1 @@
+cmd_/home/drocpdp/Projects/silberschatz_solutions/ch_02/Module.symvers := sed 's/\.ko$$/\.o/' /home/drocpdp/Projects/silberschatz_solutions/ch_02/modules.order | scripts/mod/modpost -m -a  -o /home/drocpdp/Projects/silberschatz_solutions/ch_02/Module.symvers -e -i Module.symvers   -T -
