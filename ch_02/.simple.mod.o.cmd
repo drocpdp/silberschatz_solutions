@@ -530,7 +530,7 @@ deps_/home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.mod.o := \
     $(wildcard include/config/NO_HZ_FULL) \
     $(wildcard include/config/RCU_NOCB_CPU) \
     $(wildcard include/config/TASKS_RCU) \
-    $(wildcard include/config/TASKS_RCU_TRACE) \
+    $(wildcard include/config/TASKS_TRACE_RCU) \
     $(wildcard include/config/TASKS_RUDE_RCU) \
     $(wildcard include/config/TREE_RCU) \
     $(wildcard include/config/DEBUG_OBJECTS_RCU_HEAD) \
