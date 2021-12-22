@@ -26,9 +26,8 @@
  */
 static ssize_t proc_read(struct file *file, char *buf, size_t count, loff_t *pos);
 
-static struct file_operations proc_ops = {
-        .owner = THIS_MODULE,
-        .read = proc_read,
+static const struct proc_ops proc_ops2= {
+        .proc_read = proc_read
 };
 
 
@@ -39,7 +38,7 @@ static int proc_init(void)
         // creates the /proc/hello entry
         // the following function call is a wrapper for
         // proc_create_data() passing NULL as the last argument
-        proc_create(PROC_NAME, 0, NULL, &proc_ops);
+        proc_create(PROC_NAME, 0, NULL, &proc_ops2);
 
         printk(KERN_INFO "/proc/%s created\n", PROC_NAME);
 
