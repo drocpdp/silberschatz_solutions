@@ -51,7 +51,7 @@ static void proc_exit(void) {
         // removes the /proc/hello entry
         remove_proc_entry(PROC_NAME, NULL);
 
-        printk( KERN_INFO "/proc/%s removed\n", PROC_NAME);
+        printk(KERN_INFO "/proc/%s removed\n", PROC_NAME);
 }
 
 /**
