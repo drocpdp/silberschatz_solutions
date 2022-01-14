@@ -1,0 +1,1 @@
+cmd_/home/drocpdp/Projects/silberschatz_solutions/ch_02/seconds.mod := { echo  /home/drocpdp/Projects/silberschatz_solutions/ch_02/seconds.o;  echo; } > /home/drocpdp/Projects/silberschatz_solutions/ch_02/seconds.mod
