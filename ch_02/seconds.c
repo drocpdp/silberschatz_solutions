@@ -3,12 +3,15 @@
 #include <linux/kernel.h>
 #include <linux/proc_fs.h>
 #include <asm/uaccess.h>
+#include <linux/unistd.h>
+#include <linux/limits.h>
 #include <linux/jiffies.h>
 
 #define BUFFER_SIZE 128
 #define PROC_NAME "seconds"
 
 unsigned long initial_jiffies;
+unsigned long jiffies_rate;
 
 /**
  * Function Prototypes
@@ -21,12 +24,14 @@ static const struct proc_ops proc_ops2= {
 
 /* This function is called when the module is loaded */
 static int proc_init(void)
-{
+{   
+
+    initial_jiffies = jiffies;
+
+    
     // the following is a wrapper for 
     // proc_create data() passing NULL as the last argument
     proc_create(PROC_NAME, 0, NULL, &proc_ops2);
-
-    initial_jiffies = jiffies;
 
     printk(KERN_INFO "/proc/%s/ created\n", PROC_NAME);
 
@@ -62,6 +67,7 @@ static ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, 
     char buffer[BUFFER_SIZE];
     static int completed = 0;
     unsigned long rslt;
+    int seconds_elapsed;
 
     if (completed){
         completed = 0;
@@ -70,7 +76,9 @@ static ssize_t proc_read(struct file *file, char __user *usr_buf, size_t count, 
 
     completed = 1;
 
-    rv = sprintf(buffer, "%lu, %lu", initial_jiffies, jiffies);
+    seconds_elapsed = jiffies_to_msecs((jiffies-initial_jiffies) / 1000);
+
+    rv = sprintf(buffer, "%lu, %lu, %i", initial_jiffies, jiffies, seconds_elapsed);
 
     //copies the contents of buffer to userspace usr_buf
     rslt = copy_to_user(usr_buf, buffer, rv);

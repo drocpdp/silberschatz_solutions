@@ -35,6 +35,7 @@ __used __section("__versions") = {
 	{ 0x6b10bee1, "_copy_to_user" },
 	{ 0x88db9f48, "__check_object_size" },
 	{ 0x3c3ff9fd, "sprintf" },
+	{ 0x37befc70, "jiffies_to_msecs" },
 	{ 0x15ba50a6, "jiffies" },
 	{ 0xbdfb6dbb, "__fentry__" },
 };
@@ -42,4 +43,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "6CF89B30567DF5E11B07EA5");
+MODULE_INFO(srcversion, "60379D8560D536A685A1E1D");
