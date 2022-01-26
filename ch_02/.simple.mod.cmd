@@ -1,1 +1,0 @@
-cmd_/home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.mod := { echo  /home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.o;  echo; } > /home/drocpdp/Projects/silberschatz_solutions/ch_02/simple.mod
